@@ -1,11 +1,9 @@
 <template>
   <t-layout>
     <t-aside class="aside">
-
       <t-menu theme="light" default-value="item2" :width="180">
         <template #logo>
           <t-icon name="palette-1" size="32" />
-
           <h3>原型开发</h3>
         </template>
         <t-menu-group title="主导航">
@@ -22,8 +20,6 @@
               <t-icon name="server" />
             </template>
             <t-menu-item value="2-1-1" to="/about">基础列表项</t-menu-item>
-
-
             <t-menu-item value="2-1-3">筛选列表项</t-menu-item>
             <t-menu-item value="2-1-4">树状筛选列表项</t-menu-item>
           </t-submenu>
