@@ -1,10 +1,7 @@
-# Dev·Simon
-> 这是一个基于 Vue 3 的页面原型
 
-```
 dev.simoncome.com {
     # 1. 指向 Vue 项目 build 后的 dist 文件夹（必须是绝对路径）
-    root * /var/www/vue-website/dist
+    root * /root/caddy/webdist/devsimon/dist
 
     # 2. 启用静态文件服务（处理 HTML/CSS/JS/图片等，自动识别 index.html）
     file_server
@@ -27,4 +24,3 @@ dev.simoncome.com {
     # 例：Vue 中 axios.get("/api/user") → 实际请求 http://localhost:9000/api/user
     reverse_proxy /api/* localhost:9000  # 后端服务端口（替换成你的实际后端端口）
 }
-```
