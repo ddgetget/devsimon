@@ -4,7 +4,9 @@
 
       <t-menu theme="light" default-value="item2" :width="180">
         <template #logo>
-          你啊后
+          <t-icon name="palette-1" size="32" />
+
+          <h3>原型开发</h3>
         </template>
         <t-menu-group title="主导航">
           <t-menu-item value="item1" to="/">
@@ -60,11 +62,9 @@
         </t-menu-group>
 
       </t-menu>
-
-
     </t-aside>
     <t-layout>
-      <t-header>sadsaf</t-header>
+      <t-header>原型开发系统</t-header>
       <t-content>
         <div>
           <RouterView />
@@ -78,7 +78,6 @@
 
 <script setup lang='ts'>
 import { ref } from 'vue';
-
 </script>
 
 
