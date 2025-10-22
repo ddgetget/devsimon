@@ -4,22 +4,26 @@ import HomeView from "@/views/HomeView.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    // 首页
     {
       path: "/",
       name: "home",
       component: HomeView,
     },
+    // 研究
     {
       path: "/research",
       name: "research",
       redirect: "/research/dashboard",
       component: () => import("@/views/Research/ResearchView.vue"),
       children: [
+        // 主导航
         {
           path: "dashboard",
           name: "research-dashboard",
           component: () => import("@/views/Research/DashboardView.vue"),
         },
+        // 研究
         {
           path: "taobao",
           name: "research-taobao",
@@ -30,6 +34,7 @@ const router = createRouter({
           name: "research-about",
           component: () => import("@/views/Research/AboutView.vue"),
         },
+        // 模仿
       ],
     },
     {

@@ -37,7 +37,7 @@
     <t-content class="content">
       <RouterView></RouterView>
     </t-content>
-    <t-footer class="footer"> Copyright©2024-2025 starit.com All Rights Reserved粤ICP备2021129378号
+    <t-footer class="footer"> Copyright©2011-2025 simoncome.com All Rights Reserved京ICP备2011129378号
 
     </t-footer>
   </t-layout>
