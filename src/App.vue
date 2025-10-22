@@ -7,7 +7,7 @@
         </template>
         <t-menu-item :value="item.value" v-for="item in HeadMenuList" :key="item.value" :to="item.to"> {{
           item.label
-        }}
+          }}
           <template #icon v-if="item.icon">
             <t-icon :name="item.icon" />
           </template>
@@ -43,10 +43,15 @@
   </t-layout>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted, onBeforeMount } from 'vue';
 import { RouterView } from 'vue-router'
 import { HeadMenuList } from '@/api/menu'
-
+onMounted(() => {
+  console.log("onMounted1");
+})
+onBeforeMount(() => {
+  console.log("onBeforeMount1");
+});
 </script>
 <style lang='scss' scoped>
 .content {

@@ -1,15 +1,19 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
+import TDesign from "tdesign-vue-next";
 
 import App from "./App.vue";
 import router from "./router";
-import TDesign from "tdesign-vue-next";
-import { initTheme } from "@/utils/theme";
 // 引入组件库的少量全局样式变量
 // import "tdesign-vue-next/es/style/index.css";
+// ⚠️ 必须在 createApp 之前调用！
+// import "/themes/theme-default.css";
+import { initThemeSync } from "@/utils/theme";
+initThemeSync();
 const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
 app.use(TDesign);
+
 app.mount("#app");

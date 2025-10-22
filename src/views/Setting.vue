@@ -57,7 +57,7 @@
                             <div class="color-picker-group">
                                 <div v-for="color in themeColors" :key="color.name" class="color-item"
                                     :class="{ active: themeSettings.primaryColor === color.value }"
-                                    :style="{ backgroundColor: color.value }" @click="selectThemeColor(color.value)">
+                                    :style="{ backgroundColor: color.value }" @click="selectThemeColor(color)">
                                     <t-icon v-if="themeSettings.primaryColor === color.value" name="check" />
                                 </div>
                             </div>
@@ -173,6 +173,7 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue';
 import { MessagePlugin } from 'tdesign-vue-next';
+import { switchTheme } from '@/utils/theme';
 
 // 当前激活的标签页
 const activeTab = ref('system');
@@ -201,14 +202,18 @@ const originalThemeSettings = { ...themeSettings };
 
 // 主题颜色选项
 const themeColors = [
-    { name: '默认蓝', value: '#0052d9' },
-    { name: '成功绿', value: '#00a870' },
-    { name: '警告橙', value: '#ed7b2f' },
-    { name: '错误红', value: '#d54941' },
-    { name: '中性灰', value: '#4d4d4d' },
-    { name: '紫色', value: '#722ed1' },
-    { name: '青色', value: '#13c2c2' },
-    { name: '粉色', value: '#eb2f96' }
+    { name: '默认蓝', value: '#0052d9', label: 'blue' },
+    { name: '成功绿', value: '#00a870', label: 'green' },
+    { name: '警告橙', value: '#ed7b2f', label: 'orange' },
+    { name: '错误红', value: '#d54941', label: 'red' },
+    { name: '中性灰', value: '#4d4d4d', label: 'gray' },
+    { name: '紫色', value: '#722ed1', label: 'purple' },
+    { name: '青色', value: '#13c2c2', label: 'cyan' },
+    { name: '粉色', value: '#eb2f96', label: 'pink' },
+    { name: '黄色', value: '#fddc32', label: 'yellow' },
+    { name: '得到', value: '#FF6C26', label: 'dedao' },
+    { name: '暗色', value: '#000000', label: 'dark' }
+
 ];
 
 // 通知设置
@@ -236,8 +241,9 @@ const privacySettings = reactive({
 const originalPrivacySettings = { ...privacySettings };
 
 // 选择主题颜色
-const selectThemeColor = (color: string) => {
-    themeSettings.primaryColor = color;
+const selectThemeColor = (color: { value: string, label: string }) => {
+    themeSettings.primaryColor = color.value;
+    switchTheme(color.label);
 };
 
 // 保存系统设置
@@ -287,6 +293,8 @@ const resetPrivacySettings = () => {
     Object.assign(privacySettings, originalPrivacySettings);
     MessagePlugin.info('已重置为上次保存的隐私设置');
 };
+
+
 </script>
 
 <style lang="scss" scoped>
