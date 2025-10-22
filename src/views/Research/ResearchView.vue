@@ -6,10 +6,11 @@
             <t-menu theme="light" default-value="/" :collapsed="collapsed">
                 <!-- Logo -->
                 <template #logo>
-                    <t-icon name="palette-1" size="30" />
-                    <div v-if="!collapsed">
-                        <h3>原型开发</h3>
-                    </div>
+                    <t-icon name="palette-1" size="30" v-if="!collapsed" />
+
+                    <h3 v-if="!collapsed">原型开发</h3>
+
+                    <t-icon :name="iconName" size="30" @click="changeCollapsed" />
                 </template>
 
                 <!-- 菜单组遍历 -->
@@ -41,15 +42,7 @@
         </div>
         <!-- 右侧内容 -->
         <div style="flex: 1;" class="content-container">
-            <div class="content-menu-item">
-                <t-button class="t-demo-collapse-btn" variant="text" shape="square" @click="changeCollapsed">
-                    <template #icon><t-icon :name="iconName" /></template>
-                </t-button>
-                sadsad
-            </div>
-            <div class="content">
-                <router-view />
-            </div>
+            <router-view />
         </div>
     </div>
 
@@ -76,11 +69,8 @@ const changeCollapsed: ButtonProps['onClick'] = () => {
 }
 
 .content-container {
-    padding: 10px;
+    padding: 5px;
 
-    .content-menu-item {
-        display: flex;
-        align-items: center;
-    }
+
 }
 </style>

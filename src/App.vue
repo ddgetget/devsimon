@@ -1,5 +1,4 @@
 <template>
-
   <t-layout>
     <t-header>
       <t-head-menu theme="light">
@@ -8,7 +7,7 @@
         </template>
         <t-menu-item :value="item.value" v-for="item in HeadMenuList" :key="item.value" :to="item.to"> {{
           item.label
-          }}
+        }}
           <template #icon v-if="item.icon">
             <t-icon :name="item.icon" />
           </template>
@@ -19,14 +18,18 @@
           <t-button variant="text" shape="square">
             <template #icon><t-icon name="search" /></template>
           </t-button>
-          <t-button variant="text" shape="square">
-            <template #icon><t-icon name="mail" /></template>
-          </t-button>
-          <t-button variant="text" shape="square">
+
+          <t-button variant="text" shape="square" @click="$router.push('/user')">
             <template #icon><t-icon name="user" /></template>
           </t-button>
           <t-button variant="text" shape="square">
-            <template #icon><t-icon name="ellipsis" /></template>
+            <template #icon><t-icon name="setting" @click="$router.push('/setting')" /></template>
+          </t-button>
+          <t-button variant="text" shape="square">
+            <template #icon><t-icon name="login" @click="$router.push('/login')" /></template>
+          </t-button>
+          <t-button variant="text" shape="square">
+            <template #icon><t-icon name="logout" @click="$router.push('/logout')" /></template>
           </t-button>
         </template>
       </t-head-menu>
