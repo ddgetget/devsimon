@@ -1,85 +1,59 @@
 <template>
-  <t-layout>
-    <t-aside class="aside">
-      <t-menu theme="light" default-value="item2" :width="180">
-        <template #logo>
-          <t-icon name="palette-1" size="32" />
-          <h3>原型开发</h3>
-        </template>
-        <t-menu-group title="主导航">
-          <t-menu-item value="item1" to="/">
-            <template #icon>
-              <t-icon name="app" />
-            </template>
-            仪表盘
-          </t-menu-item>
-        </t-menu-group>
-        <t-menu-group title="组件">
-          <t-submenu title="列表项" value="2-1">
-            <template #icon>
-              <t-icon name="server" />
-            </template>
-            <t-menu-item value="2-1-1" to="/about">基础列表项</t-menu-item>
-            <t-menu-item value="2-1-3">筛选列表项</t-menu-item>
-            <t-menu-item value="2-1-4">树状筛选列表项</t-menu-item>
-          </t-submenu>
-          <t-menu-item value="2-2">
-            <template #icon>
-              <t-icon name="edit-1" />
-            </template>
-            表单项
-          </t-menu-item>
-          <t-menu-item value="2-3">
-            <template #icon>
-              <t-icon name="root-list" />
-            </template>
-            详情页
-          </t-menu-item>
-          <t-menu-item value="2-4">
-            <template #icon>
-              <t-icon name="check" />
-            </template>
-            结果页
-          </t-menu-item>
-        </t-menu-group>
-        <t-menu-group title="更多">
-          <t-menu-item value="item3">
-            <template #icon>
-              <t-icon name="user" />
-            </template>
-            个人页
-          </t-menu-item>
-          <t-menu-item value="item4">
-            <template #icon>
-              <t-icon name="login" />
-            </template>
-            登录页
-          </t-menu-item>
-        </t-menu-group>
 
-      </t-menu>
-    </t-aside>
-    <t-layout>
-      <t-header>原型开发系统</t-header>
-      <t-content>
-        <div>
-          <RouterView />
-        </div>
-      </t-content>
-      <t-footer>Copyright @ 2005-{{ new Date().getFullYear() }} Tencent. All Rights Reserved</t-footer>
-    </t-layout>
+  <t-layout>
+    <t-header>
+      <t-head-menu theme="light">
+        <template #logo><t-icon name="sitemap" size="42" />
+          <h2>西蒙大杂烩</h2>
+        </template>
+        <t-menu-item :value="item.value" v-for="item in HeadMenuList" :key="item.value" :to="item.to"> {{
+          item.label
+          }}
+          <template #icon v-if="item.icon">
+            <t-icon :name="item.icon" />
+          </template>
+        </t-menu-item>
+
+        <t-menu-item value="item4" :disabled="true"> 待开发 </t-menu-item>
+        <template #operations>
+          <t-button variant="text" shape="square">
+            <template #icon><t-icon name="search" /></template>
+          </t-button>
+          <t-button variant="text" shape="square">
+            <template #icon><t-icon name="mail" /></template>
+          </t-button>
+          <t-button variant="text" shape="square">
+            <template #icon><t-icon name="user" /></template>
+          </t-button>
+          <t-button variant="text" shape="square">
+            <template #icon><t-icon name="ellipsis" /></template>
+          </t-button>
+        </template>
+      </t-head-menu>
+    </t-header>
+    <t-content class="content">
+      <RouterView></RouterView>
+    </t-content>
+    <t-footer class="footer"> Copyright©2024-2025 starit.com All Rights Reserved粤ICP备2021129378号
+
+    </t-footer>
   </t-layout>
 </template>
-
-
-<script setup lang='ts'>
+<script setup lang="ts">
 import { ref } from 'vue';
+import { RouterView } from 'vue-router'
+import { HeadMenuList } from '@/api/menu'
+
 </script>
+<style lang='scss' scoped>
+.content {
+  background-color: #FFFFFF;
+}
 
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #FFFFFF;
 
-<style lang="less" scoped>
-.aside {
-  transition: width 0.3s ease;
-  width: 180px;
 }
 </style>
