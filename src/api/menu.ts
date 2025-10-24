@@ -22,7 +22,7 @@ export const LeftMenuList = ref([
     children: [
       {
         type: "item",
-        value: "/research/dashboard",
+        value: "dashboard",
         label: "仪表盘",
         icon: "app",
       },
@@ -34,12 +34,20 @@ export const LeftMenuList = ref([
     children: [
       {
         type: "submenu",
-        value: "grid",
+        value: "research-grid",
         label: "网格",
         icon: "code",
         children: [
           { type: "item", value: "/research/taobao", label: "淘宝首页" },
-          { type: "item", value: "/research/menu/tag", label: "标签管理" },
+        ],
+      },
+      {
+        type: "submenu",
+        value: "research-chart",
+        label: "图表",
+        icon: "chart",
+        children: [
+          { type: "item", value: "/research/echarts", label: "Echarts" },
         ],
       },
     ],
@@ -50,20 +58,18 @@ export const LeftMenuList = ref([
     children: [
       {
         type: "submenu",
-        // value: "/buckydrop",
+        value: "imitate-blog",
         label: "博客类",
         icon: "education",
-        children: [
-          { type: "item", value: "/research/menu/bdquick", label: "BD快捷" },
-        ],
+        children: [{ type: "item", value: "/research/csdn", label: "CSDN" }],
       },
       {
         type: "submenu",
-        value: "/buckydrop",
+        value: "imitate-finance",
         label: "金融类",
         icon: "education",
         children: [
-          { type: "item", value: "/research/menu/bdquick", label: "BD快捷" },
+          { type: "item", value: "/research/tonghuasun", label: "同花顺" },
         ],
       },
     ],
@@ -72,24 +78,9 @@ export const LeftMenuList = ref([
     type: "group",
     title: "更多",
     children: [
-      {
-        type: "item",
-        value: "/user",
-        label: "个人页",
-        icon: "user",
-      },
-      {
-        type: "item",
-        value: "/login",
-        label: "登录页",
-        icon: "login",
-      },
-      {
-        type: "item",
-        value: "/setting",
-        label: "设置",
-        icon: "setting",
-      },
+      { type: "item", value: "/user", label: "个人页", icon: "user" },
+      { type: "item", value: "/login", label: "登录页", icon: "login" },
+      { type: "item", value: "/setting", label: "设置", icon: "setting" },
       {
         type: "item",
         value: "/research/about",

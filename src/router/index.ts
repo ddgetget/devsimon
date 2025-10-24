@@ -23,18 +23,37 @@ const router = createRouter({
           name: "research-dashboard",
           component: () => import("@/views/Research/DashboardView.vue"),
         },
-        // 研究
+        // 研究-网格
         {
           path: "taobao",
           name: "research-taobao",
-          component: () => import("@/views/Research/grid/TaobaoIndex.vue"),
+          component: () => import("@/views/Research/Grid/TaobaoIndex.vue"),
         },
+        // 研究-图表
+        {
+          path: "echarts",
+          name: "research-echarts",
+          component: () => import("@/views/Research/Charts/EchartsView.vue"),
+        },
+        // 研究-关于
         {
           path: "about",
           name: "research-about",
           component: () => import("@/views/Research/AboutView.vue"),
         },
-        // 模仿
+        // 模仿-CSDN
+        {
+          path: "csdn",
+          name: "research-csdn",
+          component: () => import("@/views/Research/Imitate/CSDNView.vue"),
+        },
+        // 模仿-同花顺
+        {
+          path: "tonghuasun",
+          name: "research-tonghuasun",
+          component: () =>
+            import("@/views/Research/Imitate/TongHuaSunView.vue"),
+        },
       ],
     },
     {
