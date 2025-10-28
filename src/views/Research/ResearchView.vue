@@ -6,11 +6,11 @@
             <t-menu theme="light" default-value="/" :collapsed="collapsed">
                 <!-- Logo -->
                 <template #logo>
-                    <t-icon name="palette-1" :size="collapsed ? 30 : 25" v-if="!collapsed" />
+                    <t-icon name="palette-1" :size="collapsed ? '30px' : '25px'" v-if="!collapsed" />
 
                     <h3 v-if="!collapsed">原型开发</h3>
 
-                    <t-icon :name="iconName" :size="collapsed ? 30 : 25" @click="changeCollapsed" />
+                    <t-icon :name="iconName" :size="collapsed ? '30px' : '25px'" @click="changeCollapsed" />
                 </template>
 
                 <!-- 菜单组遍历 -->
