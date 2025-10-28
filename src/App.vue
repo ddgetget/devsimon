@@ -3,11 +3,11 @@
     <t-header>
       <t-head-menu theme="light">
         <template #logo><t-icon name="sitemap" size="42" />
-          <h2>西蒙大杂烩</h2>
+          <h2>星赋创达</h2>
         </template>
         <t-menu-item :value="item.value" v-for="item in HeadMenuList" :key="item.value" :to="item.to"> {{
           item.label
-          }}
+        }}
           <template #icon v-if="item.icon">
             <t-icon :name="item.icon" />
           </template>
