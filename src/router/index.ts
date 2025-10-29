@@ -18,111 +18,53 @@ const router = createRouter({
       component: () => import("@/views/Research/ResearchView.vue"),
       children: [
         // 主导航
-        {
-          path: "dashboard",
-          name: "research-dashboard",
-          component: () => import("@/views/Research/DashboardView.vue"),
-        },
+        { path: "dashboard", name: "research-dashboard", component: () => import("@/views/Research/DashboardView.vue"), },
         // 研究-网格-淘宝
-        {
-          path: "taobao",
-          name: "research-taobao",
-          component: () => import("@/views/Research/Grid/TaobaoIndex.vue"),
-        },
+        { path: "taobao", name: "research-taobao", component: () => import("@/views/Research/Grid/TaobaoIndex.vue"), },
         // 研究-图表-组件
-        {
-          path: "echarts",
-          name: "research-echarts",
-          component: () => import("@/views/Research/Charts/EchartsView.vue"),
-        },
+        { path: "echarts", name: "research-echarts", component: () => import("@/views/Research/Charts/EchartsView.vue") },
 
         // 模仿-博客-CSDN
-        {
-          path: "csdn",
-          name: "research-csdn",
-          component: () => import("@/views/Research/Imitate/CSDNView.vue"),
-        },
+        { path: "csdn", name: "research-csdn", component: () => import("@/views/Research/Imitate/CSDNView.vue"), },
         // 模仿-博客-知乎
-        {
-          path: "zhihu",
-          name: "research-zhihu",
-          component: () => import("@/views/Research/Imitate/ZhiHuView.vue"),
-        },
+        { path: "zhihu", name: "research-zhihu", component: () => import("@/views/Research/Imitate/ZhiHuView.vue"), },
         // 模仿-金融-同花顺
-        {
-          path: "tonghuasun",
-          name: "research-tonghuasun",
-          component: () =>
-            import("@/views/Research/Imitate/TongHuaSunView.vue"),
-        },
+        { path: "tonghuasun", name: "research-tonghuasun", component: () => import("@/views/Research/Imitate/TongHuaSunView.vue"), },
         // 模仿-电商-SuperBuy
-        {
-          path: "superbuy",
-          name: "research-superbuy",
-          component: () => import("@/views/Research/Imitate/SuperBuyView.vue"),
-        },
+        { path: "superbuy", name: "research-superbuy", component: () => import("@/views/Research/Imitate/SuperBuyView.vue"), },
         // 模仿-电商-BuckyDrop
-        {
-          path: "buckydrop",
-          name: "research-buckydrop",
-          component: () => import("@/views/Research/Imitate/BuckyDropView.vue"),
-        },
+        { path: "buckydrop", name: "research-buckydrop", component: () => import("@/views/Research/Imitate/BuckyDropView.vue"), },
         // 模仿-电商-咸鱼
-        {
-          path: "xianyu",
-          name: "research-xianyu",
-          component: () => import("@/views/Research/Imitate/XianYuView.vue"),
-        },
+        { path: "xianyu-home", name: "research-xianyu-home", component: () => import("@/views/Research/Imitate/XianYuHomeView.vue"), },
         // 模仿-电商-京东
-        {
-          path: "jd",
-          name: "research-jd",
-          component: () => import("@/views/Research/Imitate/JDView.vue"),
-        },
+        { path: "jd-home", name: "research-jd-home", component: () => import("@/views/Research/Imitate/JDHomeView.vue"), },
         // 模仿-电商-淘宝
-        {
-          path: "tabbao",
-          name: "research-tabbao",
-          component: () => import("@/views/Research/Imitate/TaoBaoView.vue"),
-        },
+        { path: "tabbao-home", name: "research-tabbao-home", component: () => import("@/views/Research/Imitate/TaoBaoHomeView.vue"), },
         // 模仿-金融-华尔街见闻
-        {
-          path: "wallstreetcn",
-          name: "research-wallstreetcn",
-          component: () => import("@/views/Research/Imitate/HuaErJieView.vue"),
-        },
+        { path: "wallstreetcn", name: "research-wallstreetcn", component: () => import("@/views/Research/Imitate/HuaErJieView.vue"), },
         // 模仿-金融-雪球网
-        {
-          path: "xueqiu",
-          name: "research-xueqiu",
-          component: () =>
-            import("@/views/Research/Imitate/XueQiuWangView.vue"),
-        },
+        { path: "xueqiu", name: "research-xueqiu", component: () => import("@/views/Research/Imitate/XueQiuWangView.vue"), },
         // 工具-日常-待办事项
-        {
-          path: "todo",
-          name: "research-todo",
-          component: () => import("@/views/Research/Tools/ToDOView.vue"),
-        },
+        { path: "todo", name: "research-todo", component: () => import("@/views/Research/Tools/ToDOView.vue"), },
         // 研究-关于
-        {
-          path: "about",
-          name: "research-about",
-          component: () => import("@/views/Research/AboutView.vue"),
-        },
+        { path: "about", name: "research-about", component: () => import("@/views/Research/AboutView.vue"), },
+        // 模仿-音乐-QQPad
+        { path: "qq-pad-music", name: "research-qq-pad-music", component: () => import("@/views/Research/Imitate/QQPadMusic.vue"), },
+        // 模仿-音乐-酷狗Pad
+        { path: "kugou-pad-music", name: "research-kugou-pad-music", component: () => import("@/views/Research/Imitate/KuGouPadMusic.vue"), },
+        // 模仿-音乐-网易Pad
+        { path: "netease-pad-music", name: "research-netease-pad-music", component: () => import("@/views/Research/Imitate/NetEasePadMusic.vue"), },
+
       ],
-    }, {
+    },
+    {
       path: "/game",
       name: "game",
       redirect: "/game/dashboard",
       component: () => import("@/views/Game/GameView.vue"),
       children: [
         // 游戏-主导航
-        {
-          path: "dashboard",
-          name: "game-dashboard",
-          component: () => import("@/views/Game/Dashboard.vue"),
-        },
+        { path: "dashboard", name: "game-dashboard", component: () => import("@/views/Game/Dashboard.vue"), },
         // 游戏-益智-俄罗斯方块
         { path: "tetrominoes", name: "game-tetrominoes", component: () => import("@/views/Game/Puzzle/Tetrominoes.vue") },
         // 游戏-益智-五子棋

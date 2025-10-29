@@ -11,12 +11,7 @@ export const LeftResearchMenuList = ref([
     type: "group",
     title: "主导航",
     children: [
-      {
-        type: "item",
-        value: "dashboard",
-        label: "仪表盘",
-        icon: "app",
-      },
+      { type: "item", value: "dashboard", label: "仪表盘", icon: "app", },
     ],
   },
   {
@@ -64,16 +59,8 @@ export const LeftResearchMenuList = ref([
         icon: "education",
         children: [
           { type: "item", value: "/research/tonghuasun", label: "同花顺" },
-          {
-            type: "item",
-            value: "/research/wallstreetcn",
-            label: "华尔街见闻",
-          },
-          {
-            type: "item",
-            value: "/research/xueqiu",
-            label: "雪球网",
-          },
+          { type: "item", value: "/research/wallstreetcn", label: "华尔街见闻" },
+          { type: "item", value: "/research/xueqiu", label: "雪球网" },
         ],
       },
       {
@@ -88,7 +75,17 @@ export const LeftResearchMenuList = ref([
           { type: "item", value: "/research/jd", label: "京东" },
           { type: "item", value: "/research/tabbao", label: "淘宝" },
         ],
-      },
+      }, {
+        type: "submenu",
+        value: "music",
+        label: "音乐类",
+        icon: "education",
+        children: [
+          { type: "item", value: "/research/qq-pad-music", label: "QQPad" },
+          { type: "item", value: "/research/kugou-pad-music", label: "酷狗Pad" },
+          { type: "item", value: "/research/netease-pad-music", label: "网易Pad" },
+        ],
+      }
     ],
   },
   {
@@ -129,12 +126,7 @@ export const LeftGameMenuList = ref([
     type: "group",
     title: "主导航",
     children: [
-      {
-        type: "item",
-        value: "dashboard",
-        label: "仪表盘",
-        icon: "app",
-      },
+      { type: "item", value: "dashboard", label: "仪表盘", icon: "app", },
     ],
   }, {
     type: "group",
