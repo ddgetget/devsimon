@@ -6,15 +6,15 @@
             <t-menu theme="light" default-value="/" :collapsed="collapsed">
                 <!-- Logo -->
                 <template #logo>
-                    <t-icon name="palette-1" :size="collapsed ? '30px' : '25px'" v-if="!collapsed" />
+                    <t-icon name="anchor" :size="collapsed ? '30px' : '25px'" v-if="!collapsed" />
 
-                    <h3 v-if="!collapsed">原型开发</h3>
+                    <h3 v-if="!collapsed">游戏开发</h3>
 
                     <t-icon :name="iconName" :size="collapsed ? '30px' : '25px'" @click="changeCollapsed" />
                 </template>
 
                 <!-- 菜单组遍历 -->
-                <t-menu-group v-for="(group, gIndex) in LeftResearchMenuList" :key="gIndex" :title="group.title">
+                <t-menu-group v-for="(group, gIndex) in LeftGameMenuList" :key="gIndex" :title="group.title">
                     <!-- 一级菜单项遍历 -->
                     <template v-for="item in group.children" :key="item.value">
                         <!-- 普通菜单项 -->
@@ -26,16 +26,17 @@
                         </t-menu-item>
 
                         <!-- 带二级的子菜单 -->
-                        <t-submenu v-else-if="item.type === 'submenu'" :value="item.value" :title="item.label">
+                        <!-- <t-submenu v-else-if="item.type === 'submenu'" :value="item.value" :title="item.label">
                             <template #icon v-if="item.icon">
                                 <t-icon :name="item.icon" />
                             </template>
+
                             <t-menu-item
                                 v-for="subItem in item.type === 'submenu' && 'children' in item ? item.children : []"
                                 :key="subItem.value" :value="subItem.value" :to="subItem.value">
                                 {{ subItem.label }}
                             </t-menu-item>
-                        </t-submenu>
+                        </t-submenu> -->
                     </template>
                 </t-menu-group>
             </t-menu>
@@ -52,7 +53,7 @@
 import { ref, computed } from 'vue'
 import type { ButtonProps } from 'tdesign-vue-next';
 const collapsed = ref(false);
-import { LeftResearchMenuList } from '@/api/menu'
+import { LeftGameMenuList } from '@/api/menu'
 
 const iconName = computed(() => (collapsed.value ? 'chevron-right' : 'chevron-left'));
 const changeCollapsed: ButtonProps['onClick'] = () => {

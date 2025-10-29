@@ -1,21 +1,12 @@
 import { ref } from "vue";
 
 export const HeadMenuList = ref([
-  {
-    value: "index",
-    to: "/",
-    label: "首页",
-    icon: "app",
-  },
-  {
-    value: "research",
-    to: "/research",
-    label: "研究",
-    icon: "command",
-  },
+  { value: "index", to: "/", label: "首页", icon: "app", },
+  { value: "research", to: "/research", label: "研究", icon: "command", },
+  { value: "game", to: "/game", label: "游戏", icon: "gamepad", },
 ]);
 
-export const LeftMenuList = ref([
+export const LeftResearchMenuList = ref([
   {
     type: "group",
     title: "主导航",
@@ -131,3 +122,28 @@ export const LeftMenuList = ref([
     ],
   },
 ]);
+
+
+export const LeftGameMenuList = ref([
+  {
+    type: "group",
+    title: "主导航",
+    children: [
+      {
+        type: "item",
+        value: "dashboard",
+        label: "仪表盘",
+        icon: "app",
+      },
+    ],
+  }, {
+    type: "group",
+    title: "益智",
+    children: [
+      { type: "item", value: "tetrominoes", label: "俄罗斯方块", icon: "app", },
+      { type: "item", value: "gomoku", label: "五子棋", icon: "app", },
+      { type: "item", value: "chinesechess", label: "中国象棋", icon: "app", },
+      { type: "item", value: "match3", label: "消消乐", icon: "app", },
+    ],
+  },
+])

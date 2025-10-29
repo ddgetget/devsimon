@@ -111,6 +111,27 @@ const router = createRouter({
           component: () => import("@/views/Research/AboutView.vue"),
         },
       ],
+    }, {
+      path: "/game",
+      name: "game",
+      redirect: "/game/dashboard",
+      component: () => import("@/views/Game/GameView.vue"),
+      children: [
+        // 游戏-主导航
+        {
+          path: "dashboard",
+          name: "game-dashboard",
+          component: () => import("@/views/Game/Dashboard.vue"),
+        },
+        // 游戏-益智-俄罗斯方块
+        { path: "tetrominoes", name: "game-tetrominoes", component: () => import("@/views/Game/Puzzle/Tetrominoes.vue") },
+        // 游戏-益智-五子棋
+        { path: "gomoku", name: "game-gomoku", component: () => import("@/views/Game/Puzzle/Gomoku.vue") },
+        // 游戏-益智-中国象棋
+        { path: "chinesechess", name: "game-chinesechess", component: () => import("@/views/Game/Puzzle/ChineseChess.vue") },
+        // 游戏-益智-消消乐
+        { path: "match3", name: "game-match3", component: () => import("@/views/Game/Puzzle/Match3Game.vue") },
+      ],
     },
     {
       path: "/about",
