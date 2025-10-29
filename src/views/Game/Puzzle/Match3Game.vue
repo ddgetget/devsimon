@@ -787,7 +787,7 @@ onMounted(() => {
 .match3-game {
   font-family: 'Arial', sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
+  min-height: 85vh;
   padding: 5px;
 
 

@@ -752,7 +752,7 @@ initBoard()
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 85vh;
   padding: 5px;
 
 
@@ -763,8 +763,8 @@ initBoard()
   gap: 30px;
   align-items: flex-start;
   background: white;
-  border-radius: 20px;
-  padding: 30px;
+  border-radius: 10px;
+  padding: 10px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
 
   @media (max-width: 1200px) {
