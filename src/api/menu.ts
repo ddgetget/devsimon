@@ -1,7 +1,7 @@
 import { ref } from "vue";
 
 export const HeadMenuList = ref([
-  { value: "index", to: "/", label: "首页", icon: "app", },
+  { value: "index", to: "/", label: "首页", icon: "home", },
   { value: "research", to: "/research", label: "研究", icon: "command", },
   { value: "game", to: "/game", label: "游戏", icon: "gamepad", },
   { value: "application", to: "/app", label: "应用", icon: "app", },
