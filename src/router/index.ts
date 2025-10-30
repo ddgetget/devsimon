@@ -74,35 +74,25 @@ const router = createRouter({
         // 游戏-益智-消消乐
         { path: "match3", name: "game-match3", component: () => import("@/views/Game/Puzzle/Match3Game.vue") },
       ],
+    }, {
+      path: "/app",
+      name: "readcloub",
+      redirect: "/app/dashboard",
+      component: () => import("@/views/Applications/ApplicationsView.vue"),
+      children: [
+        // 应用-主导航
+        { path: "dashboard", name: "app-dashboard", component: () => import("@/views/Applications/Dashboard.vue"), },
+        // 应用-读书会-打卡
+        { path: "club-clockin", name: "app-club-clockin", component: () => import("@/views/Applications/ReadClub/ClockIn.vue"), },
+        // 应用-读书会-打卡数据
+        { path: "club-clockdashboard", name: "app-club-clockdashboard", component: () => import("@/views/Applications/ReadClub/ClockDashboard.vue"), },
+      ],
     },
-    {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("@/views/AboutView.vue"),
-    },
-    {
-      path: "/setting",
-      name: "setting",
-      component: () => import("@/views/Setting.vue"),
-    },
-    {
-      path: "/user",
-      name: "user",
-      component: () => import("@/views/User.vue"),
-    },
-    {
-      path: "/login",
-      name: "login",
-      component: () => import("@/views/Login.vue"),
-    },
-    {
-      path: "/logout",
-      name: "logout",
-      component: () => import("@/views/Logout.vue"),
-    },
+    { path: "/about", name: "about", component: () => import("@/views/AboutView.vue"), },
+    { path: "/setting", name: "setting", component: () => import("@/views/Setting.vue"), },
+    { path: "/user", name: "user", component: () => import("@/views/User.vue"), },
+    { path: "/login", name: "login", component: () => import("@/views/Login.vue"), },
+    { path: "/logout", name: "logout", component: () => import("@/views/Logout.vue"), },
   ],
 });
 
