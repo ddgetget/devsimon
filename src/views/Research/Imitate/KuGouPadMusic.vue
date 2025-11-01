@@ -2,7 +2,8 @@
     <div class='container'>
         <div class="content">
             <div class='slider'>
-                <div class="user"> <t-avatar image="https://tdesign.gtimg.com/site/avatar.jpg" size="68px" />
+                <div class="user">
+                    <t-avatar image="https://tdesign.gtimg.com/site/avatar.jpg" size="68px" />
                 </div>
                 <div class="menu">
                     <div class="menu-item" @click="switchBody('music')">
@@ -90,6 +91,72 @@
                                 </div>
 
                             </div>
+                            <div class="zhuanshu-recommend-item">
+                                <h3>专属推荐</h3>
+                                <div class="zhuanshu-recommend-item-btn">
+                                    <t-icon name="refresh" size="medium" />
+                                    <t-icon name="arrow-right" size="medium" />
+                                    <div>更多</div>
+                                </div>
+                            </div>
+                            <div class="zhuanshu-list">
+                                <div class="zhuanshu-item-container">
+                                    <div class="zhuanshu-item">
+                                        <t-image class="zhuanshu-item-img"
+                                            src="https://imgessl.kugou.com/custom/150/20200723/20200723025423301714.jpg"
+                                            size="medium" />
+                                        <div class="zhuanshu-item-name">2025痘印最上头的DJ劲舞</div>
+                                    </div>
+                                    <div class="zhuanshu-item">
+                                        <t-image class="zhuanshu-item-img"
+                                            src="https://imgessl.kugou.com/custom/150/20240615/20240615215758191064.jpg"
+                                            size="medium" />
+                                        <div class="zhuanshu-item-name">2025痘印最上头的DJ劲舞</div>
+                                    </div>
+                                    <div class="zhuanshu-item">
+                                        <t-image class="zhuanshu-item-img"
+                                            src="https://imgessl.kugou.com/custom/150/20200723/20200723025423301714.jpg"
+                                            size="medium" />
+                                        <div class="zhuanshu-item-name">2025痘印最上头的DJ劲舞</div>
+                                    </div>
+                                    <div class="zhuanshu-item">
+                                        <t-image class="zhuanshu-item-img"
+                                            src="https://imgessl.kugou.com/custom/150/20240615/20240615215758191064.jpg"
+                                            size="medium" />
+                                        <div class="zhuanshu-item-name">2025痘印最上头的DJ劲舞</div>
+                                    </div>
+                                    <div class="zhuanshu-item">
+                                        <t-image class="zhuanshu-item-img"
+                                            src="https://imgessl.kugou.com/custom/150/20200723/20200723025423301714.jpg"
+                                            size="medium" />
+                                        <div class="zhuanshu-item-name">2025痘印最上头的DJ劲舞</div>
+                                    </div>
+                                    <div class="zhuanshu-item">
+                                        <t-image class="zhuanshu-item-img"
+                                            src="https://imgessl.kugou.com/custom/150/20240615/20240615215758191064.jpg"
+                                            size="medium" />
+                                        <div class="zhuanshu-item-name">2025痘印最上头的DJ劲舞</div>
+                                    </div>
+                                    <div class="zhuanshu-item">
+                                        <t-image class="zhuanshu-item-img"
+                                            src="https://imgessl.kugou.com/custom/150/20200723/20200723025423301714.jpg"
+                                            size="medium" />
+                                        <div class="zhuanshu-item-name">2025痘印最上头的DJ劲舞</div>
+                                    </div>
+                                    <div class="zhuanshu-item">
+                                        <t-image class="zhuanshu-item-img"
+                                            src="https://imgessl.kugou.com/custom/150/20240615/20240615215758191064.jpg"
+                                            size="medium" />
+                                        <div class="zhuanshu-item-name">2025痘印最上头的DJ劲舞</div>
+                                    </div>
+                                    <div class="zhuanshu-item">
+                                        <t-image class="zhuanshu-item-img"
+                                            src="https://imgessl.kugou.com/custom/150/20240615/20240615215758191064.jpg"
+                                            size="medium" />
+                                        <div class="zhuanshu-item-name">2025痘印最上头的DJ劲舞</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div v-else-if="activeMusicTab === 2">频道内容</div>
                         <div v-else-if="activeMusicTab === 3">歌单内容</div>
@@ -114,8 +181,31 @@
 
         </div>
         <div class="footer">
-            <div>底部内容</div>
+            <div class="play-icon">
+                <t-avatar image="https://tdesign.gtimg.com/site/avatar.jpg" size="large" />
+            </div>
+            <div class="play-control">
+                <t-icon name="chevron-left-circle" class="play-control-icon" />
+                <t-icon name="play-circle" class="play-control-icon play-middle-icon" />
+                <t-icon name="chevron-right-circle" class="play-control-icon" />
 
+            </div>
+            <div class="process">
+
+                <div class="progress-info">
+                    <div class="process-info-item">Romeo's Tune - Pajaro Sunrise</div>
+                    <div class="process-info-item">0:09 / 3:15</div>
+                </div>
+                <t-progress theme="line" :color="{ from: '#0052D9', to: '#00A870' }" :percentage="60"
+                    :status="'active'" />
+            </div>
+
+            <div class="play-process-icon">
+                <t-icon name="heart" class="play-process-icon-item" />
+                <t-icon name="download" class="play-process-icon-item" />
+                <t-icon name="chevron-right-double" class="play-process-icon-item" />
+                <t-icon name="indent-right" class="play-process-icon-item" />
+            </div>
         </div>
     </div>
 </template>
@@ -139,7 +229,7 @@ const handleChange = (value: number) => {
 </script>
 <style lang='scss' scoped>
 .container {
-    background-color: #f5f7fa;
+    background-color: #F5F7FA;
     max-width: 1400px;
     min-height: 800px;
     // display: flex;
@@ -164,22 +254,24 @@ const handleChange = (value: number) => {
         align-items: center;
         padding: 30px 0;
 
-        .menu {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
 
-            .menu-item-text {
-                display: flex;
-                justify-content: center;
-            }
-        }
     }
 
     .body {
         flex: 1;
 
         // background-color: green;
+    }
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .menu-item-text {
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -190,7 +282,7 @@ const handleChange = (value: number) => {
         align-items: center;
 
         .music-tabs {
-            background-color: #f5f7fa;
+            background-color: #F5F7FA;
         }
 
         .music-search {
@@ -222,11 +314,102 @@ const handleChange = (value: number) => {
                 height: 140px;
             }
         }
+
+        .zhuanshu-recommend-item {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            .zhuanshu-recommend-item-btn {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+
+        .zhuanshu-list {
+
+            margin: 0 auto;
+            display: flex;
+
+
+            .zhuanshu-item-container {
+                gap: 20px;
+                flex-wrap: wrap;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+
+
+
+                .zhuanshu-item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 10px;
+
+                    .zhuanshu-item-img {
+                        width: 150px;
+                        height: 150px;
+                    }
+
+                    .zhuanshu-item-name {
+                        font-weight: 700;
+                        max-width: 140px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
     }
 }
 
 .footer {
     height: 50px;
-    background-color: #dbd6d6;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+
+    .play-control {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 0 20px;
+
+        .play-control-icon {
+            font-size: 24px;
+        }
+
+        .play-middle-icon {
+            font-size: 38px;
+        }
+    }
+
+    .process {
+        width: 70%;
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .play-process-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .play-process-icon-item {
+            font-size: 24px;
+        }
+    }
 }
 </style>

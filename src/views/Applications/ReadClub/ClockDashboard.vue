@@ -197,7 +197,7 @@ const signInGroups = ref([
 .club-group {
     display: grid;
     gap: 16px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     .club-item {
         display: grid;
