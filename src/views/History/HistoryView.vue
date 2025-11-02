@@ -3,7 +3,7 @@
     <div class="container">
 
         <div :style="{ width: collapsed ? '64px' : '230px' }">
-            <t-menu theme="light" default-value="/" :collapsed="collapsed">
+            <t-menu theme="light" default-value="/" :collapsed="collapsed" expandMutex>
                 <!-- Logo -->
                 <template #logo>
                     <t-icon name="chat-bubble-history" :size="collapsed ? '30px' : '25px'" v-if="!collapsed" />
