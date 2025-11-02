@@ -54,7 +54,6 @@ const router = createRouter({
         { path: "kugou-pad-music", name: "research-kugou-pad-music", component: () => import("@/views/Research/Imitate/KuGouPadMusic.vue"), },
         // 模仿-音乐-网易Pad
         { path: "netease-pad-music", name: "research-netease-pad-music", component: () => import("@/views/Research/Imitate/NetEasePadMusic.vue"), },
-
       ],
     },
     {
@@ -86,6 +85,33 @@ const router = createRouter({
         { path: "club-clockin", name: "app-club-clockin", component: () => import("@/views/Applications/ReadClub/ClockIn.vue"), },
         // 应用-读书会-打卡数据
         { path: "club-clockdashboard", name: "app-club-clockdashboard", component: () => import("@/views/Applications/ReadClub/ClockDashboard.vue"), },
+      ],
+    }, {
+      path: "/science",
+      name: "science",
+      redirect: "/science/dashboard",
+      component: () => import("@/views/Science/ScienceView.vue"),
+      children: [
+        // 应用-主导航
+        { path: "dashboard", name: "science-dashboard", component: () => import("@/views/Science/Dashboard.vue"), },
+      ],
+    }, {
+      path: "/economy",
+      name: "economy",
+      redirect: "/economy/dashboard",
+      component: () => import("@/views/Economy/EconomyView.vue"),
+      children: [
+        // 应用-主导航
+        { path: "dashboard", name: "economy-dashboard", component: () => import("@/views/Economy/Dashboard.vue"), },
+      ],
+    }, {
+      path: "/history",
+      name: "history",
+      redirect: "/history/dashboard",
+      component: () => import("@/views/History/HistoryView.vue"),
+      children: [
+        // 应用-主导航
+        { path: "dashboard", name: "history-dashboard", component: () => import("@/views/History/Dashboard.vue"), },
       ],
     },
     { path: "/about", name: "about", component: () => import("@/views/AboutView.vue"), },
